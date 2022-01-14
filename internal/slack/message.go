@@ -19,7 +19,7 @@ func (msg *Message) AddBlock(block *Block) {
 	msg.Blocks = append(msg.Blocks, block)
 }
 
-// NewMessage creates a new Message that contains one or more blocks to be displayed
+// NewBlockMessage creates a new Message that contains one or more blocks to be displayed
 func NewBlockMessage(notification string, blocks ...*Block) Message {
 	return Message{
 		Text:   notification,
