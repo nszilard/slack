@@ -50,7 +50,10 @@ dev: fmt check ## Builds a local dev version
 package: bootstrap check ## Builds a production version
 	@env GOOS=linux GOARCH=amd64 go build -o .target/linux_amd64/${BINARY}
 
-.PHONY: bootstrap fmt check test coverage show-coverage dev package clean help
+docs: dev ## Generates markdown documentation
+	@.target/local/${BINARY} docs
+
+.PHONY: bootstrap fmt check test coverage show-coverage dev package docs clean help
 
 clean: ## Cleans up temporary and compiled files
 	@echo "==> Cleaning up ..."
