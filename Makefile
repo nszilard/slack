@@ -8,8 +8,8 @@
 # Variables
 #--------------------------------------------------
 BINARY="slack"
+TEST?=$$(go list ./...)
 GO_FILES?=$$(find . -name '*.go')
-TEST?=$$(go list ./... | grep -v /vendor/)
 
 #--------------------------------------------------
 # Targets
@@ -38,7 +38,7 @@ test: check ## Runs all tests
 
 coverage: ## Runs code coverage
 	@mkdir -p .target/coverage
-	@go test --race --p=1 $(TEST) -coverprofile=.target/coverage/cover.out -covermode=atomic
+	@go test --p=1 $(TEST) -coverprofile=.target/coverage/cover.out -covermode=atomic
 
 show-coverage: coverage ## Shows code coverage report in your web browser
 	@go tool cover -html=.target/coverage/cover.out
@@ -55,7 +55,6 @@ package: bootstrap check ## Builds a production version
 clean: ## Cleans up temporary and compiled files
 	@echo "==> Cleaning up ..."
 	@rm -rf .target
-	@rm ${BINARY}
 	@echo "    [✓]"
 	@echo ""
 
