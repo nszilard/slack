@@ -49,6 +49,9 @@ func Execute() error {
 // Cobra command init
 //----------------------------------------
 func init() {
+	// Hide the completion command
+	mainCmd.CompletionOptions.HiddenDefaultCmd = true
+
 	// Global persistent flags that are required to have a value
 	mainCmd.PersistentFlags().StringVarP(&slackOrgID, models.ArgSlackOrgIDFlag, "O", "", "Slack Organization ID in the form of: Txxxxxx. (Required)")
 	mainCmd.PersistentFlags().StringVarP(&slackAppID, models.ArgSlackWebhookIDFlag, "W", "", "Slack Webhook ID in the form of: Bxxxxxx. (Required)")
