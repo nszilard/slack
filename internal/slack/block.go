@@ -5,6 +5,7 @@ import "fmt"
 // MessageBlockType defines the type for a Block
 type MessageBlockType string
 
+// MBTxxxxx defines the message header types
 const (
 	MBTHeader  MessageBlockType = "header"
 	MBTDivider MessageBlockType = "divider"
@@ -57,7 +58,7 @@ func NewSectionBlock(text string, fields ...*TextObject) *Block {
 	return newSectionBlock(MBTSection, text, TOTPlaintext, fields...)
 }
 
-// NewSectionBlock returns a new section block which has the text in a code block
+// NewCodeSectionBlock returns a new section block which has the text in a code block
 func NewCodeSectionBlock(text string) *Block {
 	return newSectionBlock(MBTSection, fmt.Sprintf("```%v```", text), TOTMarkdown)
 }

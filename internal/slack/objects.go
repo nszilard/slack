@@ -5,6 +5,7 @@ import "fmt"
 // TextObjectType defines the type for a TextObject
 type TextObjectType string
 
+// TOTxxxxx defines the TextObject types
 const (
 	TOTPlaintext TextObjectType = "plain_text"
 	TOTMarkdown  TextObjectType = "mrkdwn"
@@ -63,6 +64,7 @@ func NewCodeblockTextObject(text string) *TextObject {
 // ElementObjectType defines the type for an ElementObject
 type ElementObjectType string
 
+// EOTxxxxx defines the ElementObject types
 const (
 	EOTButton ElementObjectType = "button"
 	EOTImage  ElementObjectType = "image"
