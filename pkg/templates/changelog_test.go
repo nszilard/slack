@@ -10,7 +10,7 @@ import (
 func TestChangelog(t *testing.T) {
 	service := "test"
 	version := "1.0.0"
-	changes := "- feat: Some really usefull stuff"
+	changes := "- feat: Some really useful stuff"
 
 	expected := struct {
 		numberOfBlocks int

@@ -80,7 +80,7 @@ func (client *Client) SetMessage(msg *slack.Message) {
 	client.msg = msg
 }
 
-// Send is responsibe for sending the Slack message
+// Send is responsible for sending the Slack message
 func (client *Client) Send() error {
 	setOptionsOnMessage(client)
 

@@ -1,6 +1,6 @@
 package models
 
-// Root command environemnt variables and flags
+// Root command environment variables and flags
 const (
 	ArgSlackOrgIDEnv        = "SLACK_ORG_ID"
 	ArgSlackWebhookIDEnv    = "SLACK_WEBHOOK_ID"
@@ -17,7 +17,7 @@ const (
 	ArgSlackUserImageFlag    = "slack-user-image"
 )
 
-// Changelog command environemnt variables and flags
+// Changelog command environment variables and flags
 const (
 	ArgChangelogGroupEnv   = "CHANGELOG_GROUP"
 	ArgChangelogServiceEnv = "CHANGELOG_SERVICE"
