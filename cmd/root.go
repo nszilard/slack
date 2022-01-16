@@ -23,6 +23,7 @@ var (
 	slackUserImage string         // Image to use when sending the message
 	debug          bool           // Show debug logs
 	client         *models.Client // Slack client
+	appVersion     = "0.0.0"      // Application version, set by linker
 )
 
 //----------------------------------------
@@ -32,6 +33,8 @@ var mainCmd = &cobra.Command{
 	Use:   "slack",
 	Short: "CLI to send Slack messages programmatically.",
 	Long:  "A simple CLI tool to send Slack messages programmatically using pre-defined templates.",
+
+	Version: func() string { return appVersion }(),
 
 	PersistentPreRunE: checkAndSet,
 	DisableAutoGenTag: true,
