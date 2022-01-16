@@ -1,0 +1,5 @@
+# Ignore everything
+*
+
+# Except the built artifact
+!.target/linux_amd64/slack

@@ -10,7 +10,7 @@
 BINARY="slack"
 TEST?=$$(go list ./...)
 GO_FILES?=$$(find . -name '*.go')
-NEW_VERSION ?= 1.0.0
+NEW_VERSION ?= "0.2.0-pre-release"
 LATEST_VERSION=$$(git describe --abbrev=0 --tags)
 
 #--------------------------------------------------
