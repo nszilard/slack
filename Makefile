@@ -54,7 +54,7 @@ show-coverage: coverage ## Shows code coverage report in your web browser
 .PHONY: dev
 dev: fmt check ## Builds a local dev version
 	@go build -ldflags "-X 'github.com/nszilard/slack/cmd.appVersion=${LATEST_VERSION}-dev'" -o .target/local/${BINARY}
-	@go install
+	@go install -ldflags "-X 'github.com/nszilard/slack/cmd.appVersion=${LATEST_VERSION}-dev'"
 
 .PHONY: package
 package: clean bootstrap check ## Builds a production version
