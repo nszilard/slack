@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"fmt"
 	"os"
 	"testing"
 
@@ -16,7 +17,13 @@ func Test_generateMarkdown(t *testing.T) {
 	docsLocation = folder
 	defer os.RemoveAll(folder)
 
-	if err := generateMarkdown(&cobra.Command{Use: "test"}, nil); err != nil {
+	err = generateMarkdown(&cobra.Command{Use: "test", DisableAutoGenTag: true}, nil)
+	if err != nil {
 		t.Errorf("docs: unexpected error: %v", err)
+	}
+
+	_, err = os.ReadFile(fmt.Sprintf("%v/%v", folder, "test.md"))
+	if err != nil {
+		t.Errorf("docs: unexpected error reading generated md file: %v", err)
 	}
 }
